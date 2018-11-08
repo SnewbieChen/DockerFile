@@ -6,4 +6,4 @@ RUN yum makecache && yum install -y which gcc-c++ gcc automake autoconf libtool 
     mkdir /build && cd /build && \
     curl -sqLkv https://github.com/SIPp/sipp/releases/download/v${SIPP_VERSION}/sipp-${SIPP_VERSION}.tar.gz | tar xvzf - --strip-components=1 && \
     ./build.sh --full && make install && \
-    cd / && rm -rf /build
+    cd / && rm -rf /build && yum clean all
